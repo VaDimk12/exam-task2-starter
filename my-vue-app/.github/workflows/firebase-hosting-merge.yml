@@ -8,6 +8,10 @@ on:
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
+    permissions:  # Додаємо явні дозволи
+      contents: read
+      deployments: write
+      id-token: write  # Для автентифікації через GitHub OIDC (якщо використовується)
 
     steps:
       - name: Checkout
